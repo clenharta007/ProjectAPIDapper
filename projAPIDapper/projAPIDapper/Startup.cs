@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using projAPIDapper.Context;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,14 @@ namespace projAPIDapper
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<myContext>(options => options.UseSqlServer(Configuration.GetConnectionString("API")));
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+            services.AddDbContext<myContext>(options => 
+            options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("API")));
+            services.AddCors(e =>
+            {
+                e.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +52,7 @@ namespace projAPIDapper
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
