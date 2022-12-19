@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper.csproj": {}
+    "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper\\projAPIDapper.csproj": {}
   },
   "projects": {
-    "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper.csproj": {
+    "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper\\projAPIDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper.csproj",
+        "projectUniqueName": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper\\projAPIDapper.csproj",
         "projectName": "projAPIDapper",
-        "projectPath": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper.csproj",
+        "projectPath": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper\\projAPIDapper.csproj",
         "packagesPath": "C:\\Users\\clen.hartanto\\.nuget\\packages\\",
-        "outputPath": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\obj\\",
+        "outputPath": "D:\\_PROJEK\\ProjectAPIDapper\\projAPIDapper\\projAPIDapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace projAPIDapper.Context
 {
-    public class MyContext:DbContext
+    public class myContext:DbContext
     {
-        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        public myContext(DbContextOptions<myContext> options) : base(options)
         {
 
         }
