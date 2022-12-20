@@ -9,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using projAPIDapper.Context;
+using projAPIDapper.Repositories;
+using projAPIDapper.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,7 @@ namespace projAPIDapper
             options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddDbContext<myContext>(options => 
             options.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("API")));
+            services.AddScoped<IRepository, PresenceBookRepository>();
             services.AddCors(e =>
             {
                 e.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

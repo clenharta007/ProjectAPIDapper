@@ -38,7 +38,7 @@ namespace projAPIDapper.Repositories
         {
             using (SqlConnection connection = new SqlConnection(_configuration["ConnectionStrings:API"]))
             {
-                var spName = "SP_GetAllPB";
+                var spName = "SP_GetAllPBook";
                 var pb = connection.Query<PresenceBook>(spName, commandType: CommandType.StoredProcedure);
                 return pb;
             }
@@ -46,7 +46,14 @@ namespace projAPIDapper.Repositories
 
         public PresenceBook Get(int Id)
         {
-            throw new NotImplementedException();
+            /*using (SqlConnection connection = new SqlConnection(_configuration["ConnectionStrings:API"]))
+            {
+                var spGetOneName = "SP_GetOneDataPBook";
+                parameters.Add("@id_onedata", Id);
+                var getPBOne = connection.
+                return getPBOne;
+            }*/
+            return context.PresenceBooks.Find(Id);
         }
 
         public int Insert(PresenceBook presenceBook)
@@ -55,6 +62,15 @@ namespace projAPIDapper.Repositories
             {
                 var procInsName = "SP_Insert";
                 parameters.Add("@Name", presenceBook.Name);
+                parameters.Add("@Phone", presenceBook.Phone);
+                parameters.Add("@Email", presenceBook.Email);
+                parameters.Add("@Address", presenceBook.Address);
+                parameters.Add("@Provinsi", presenceBook.Provinsi);
+                parameters.Add("@Kota", presenceBook.Kota);
+                parameters.Add("@Kecamatan", presenceBook.Kecamatan);
+                parameters.Add("@Kelurahan", presenceBook.Kelurahan);
+                parameters.Add("@Kodepos", presenceBook.Kodepos);
+                parameters.Add("@dateadded", presenceBook.DateAdded);
                 var insert = connection.Execute(procInsName, parameters, commandType: CommandType.StoredProcedure);
                 return insert;
             }
