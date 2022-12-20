@@ -17,7 +17,7 @@ namespace projAPIDapper.Models
         public string Kecamatan { get; set; }
         public string Kelurahan { get; set; }
         public string Kodepos { get; set; }
-        public DateTime DateAdded { get; set; }
+        public string DateAdded { get; set; }
 
     }
 }
