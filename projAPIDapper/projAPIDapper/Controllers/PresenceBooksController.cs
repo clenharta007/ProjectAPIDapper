@@ -31,6 +31,19 @@ namespace projAPIDapper.Controllers
                 return StatusCode(404, new { status = HttpStatusCode.NotFound, message = get.Count() + " Data Ditemukan", Data = get });
             }
         }
+        [HttpGet("{Id}")]
+        public virtual ActionResult Get(int Id)
+        {
+            var get = repository.Get(Id);
+            if (get.Count() != 0)
+            {
+                return StatusCode(200, new { status = HttpStatusCode.OK, message = get.Count() + " Data Ditemukan", Data = get });
+            }
+            else
+            {
+                return StatusCode(404, new { status = HttpStatusCode.NotFound, message = get.Count() + " Data Ditemukan", Data = get });
+            }
+        }
         [HttpPost]
         public virtual ActionResult Insert(PresenceBook presenceBook)
         {

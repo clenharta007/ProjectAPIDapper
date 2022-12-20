@@ -44,16 +44,16 @@ namespace projAPIDapper.Repositories
             }
         }
 
-        public PresenceBook Get(int Id)
+        public IEnumerable<PresenceBook> Get(int Id)
         {
-            /*using (SqlConnection connection = new SqlConnection(_configuration["ConnectionStrings:API"]))
+            using (SqlConnection connection = new SqlConnection(_configuration["ConnectionStrings:API"]))
             {
                 var spGetOneName = "SP_GetOneDataPBook";
                 parameters.Add("@id_onedata", Id);
-                var getPBOne = connection.
+                var getPBOne = connection.Query<PresenceBook>(spGetOneName, parameters, commandType: CommandType.StoredProcedure);
                 return getPBOne;
-            }*/
-            return context.PresenceBooks.Find(Id);
+            }
+            /*return context.PresenceBooks.Find(Id);*/
         }
 
         public int Insert(PresenceBook presenceBook)

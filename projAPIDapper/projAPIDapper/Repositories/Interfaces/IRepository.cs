@@ -9,7 +9,7 @@ namespace projAPIDapper.Repositories.Interfaces
     public interface IRepository
     {
         IEnumerable<PresenceBook> Get();
-        PresenceBook Get(int Id);
+        IEnumerable<PresenceBook> Get(int Id);
         int Insert(PresenceBook presenceBook);
         int Update(PresenceBook presenceBook);
         int Delete(int Id);
