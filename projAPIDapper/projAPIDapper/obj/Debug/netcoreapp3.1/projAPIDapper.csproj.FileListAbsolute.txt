@@ -67,3 +67,4 @@ D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.dll
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.pdb
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.genruntimeconfig.cache
+D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.csproj.AssemblyReference.cache

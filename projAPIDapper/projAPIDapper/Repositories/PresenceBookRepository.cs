@@ -25,13 +25,6 @@ namespace projAPIDapper.Repositories
         DynamicParameters parameters = new DynamicParameters();
         public int Delete(int Id)
         {
-            /*var find = context.PresenceBooks.Find(Id);
-            if (find != null)
-            {
-                context.PresenceBooks.Remove(find);
-                return context.SaveChanges();
-            }
-            return 0;*/
             using(SqlConnection connection=new SqlConnection(_configuration["ConnectionStrings:API"]))
             {
                 var procDelName = "SP_Delete";
@@ -39,6 +32,13 @@ namespace projAPIDapper.Repositories
                 var delete = connection.Execute(procDelName, parameters, commandType: CommandType.StoredProcedure);
                 return delete;
             }
+            /*var find = context.PresenceBooks.Find(Id);
+            if (find != null)
+            {
+                context.PresenceBooks.Remove(find);
+                return context.SaveChanges();
+            }
+            return 0;*/
         }
 
         public IEnumerable<PresenceBook> Get()
