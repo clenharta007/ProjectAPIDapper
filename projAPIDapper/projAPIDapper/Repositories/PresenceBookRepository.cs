@@ -25,13 +25,20 @@ namespace projAPIDapper.Repositories
         DynamicParameters parameters = new DynamicParameters();
         public int Delete(int Id)
         {
-            var find = context.PresenceBooks.Find(Id);
+            /*var find = context.PresenceBooks.Find(Id);
             if (find != null)
             {
                 context.PresenceBooks.Remove(find);
                 return context.SaveChanges();
             }
-            return 0;
+            return 0;*/
+            using(SqlConnection connection=new SqlConnection(_configuration["ConnectionStrings:API"]))
+            {
+                var procDelName = "SP_Delete";
+                parameters.Add("@Id", Id);
+                var delete = connection.Execute(procDelName, parameters, commandType: CommandType.StoredProcedure);
+                return delete;
+            }
         }
 
         public IEnumerable<PresenceBook> Get()
@@ -78,8 +85,26 @@ namespace projAPIDapper.Repositories
 
         public int Update(PresenceBook presenceBook)
         {
-            context.Entry(presenceBook).State = EntityState.Modified;
-            return context.SaveChanges();
+            /*context.Entry(presenceBook).State = EntityState.Modified;
+            return context.SaveChanges();*/
+            using(SqlConnection connection=new SqlConnection(_configuration["ConnectionStrings:API"]))
+            {
+                var procUpName = "SP_UpdatePBook";
+                parameters.Add("@Id", presenceBook.Id);
+                parameters.Add("@Name", presenceBook.Name);
+                parameters.Add("@Phone", presenceBook.Phone);
+                parameters.Add("@Email", presenceBook.Email);
+                parameters.Add("@Address", presenceBook.Address);
+                parameters.Add("@Provinsi", presenceBook.Provinsi);
+                parameters.Add("@Kota", presenceBook.Kota);
+                parameters.Add("@Kecamatan", presenceBook.Kecamatan);
+                parameters.Add("@Kelurahan", presenceBook.Kelurahan);
+                parameters.Add("@Kodepos", presenceBook.Kodepos);
+                parameters.Add("@dateadded", presenceBook.DateAdded);
+                var update = connection.Execute(procUpName,parameters,commandType: CommandType.StoredProcedure);
+                return update;
+
+            }
         }
     }
 }

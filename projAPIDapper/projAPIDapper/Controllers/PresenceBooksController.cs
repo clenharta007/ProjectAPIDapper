@@ -11,7 +11,7 @@ namespace projAPIDapper.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PresenceBooksController:ControllerBase
+    public class PresenceBooksController : ControllerBase
     {
         private readonly IRepository repository;
         public PresenceBooksController(IRepository repository)
@@ -57,5 +57,33 @@ namespace projAPIDapper.Controllers
                 return StatusCode(500, new { status = HttpStatusCode.InternalServerError, message = "Gagal Memasukkan Data", Data = insert });
             }
         }
+        [HttpPut]
+        public virtual ActionResult Update(PresenceBook presenceBook)
+        {
+            var update = repository.Update(presenceBook);
+            if (update >= 1)
+            {
+                return StatusCode(200, new { status = HttpStatusCode.OK, message = "Data Berhasil Diupdate", Data = update });
+            }
+            else
+            {
+                return StatusCode(500, new { status = HttpStatusCode.InternalServerError, message = "Gagal Update Data", Data = update });
+            }
+        }
+        [HttpDelete("{Id}")]
+        public virtual ActionResult Delete(int Id)
+        {
+            var delete = repository.Delete(Id);
+            if (delete >= 1)
+            {
+                return StatusCode(200, new { status = HttpStatusCode.OK, message = "Data Berhasil DiDelete", Data = delete });
+            }
+            else
+            {
+                return StatusCode(500, new { status = HttpStatusCode.InternalServerError, message = "Gagal Delete Data", Data = delete });
+            }
+        }
+        
     }
 }
+

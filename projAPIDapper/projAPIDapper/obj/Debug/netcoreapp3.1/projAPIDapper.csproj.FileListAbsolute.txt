@@ -54,7 +54,6 @@ D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\bin\Debug\netcoreapp3.1\
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.csproj.AssemblyReference.cache
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.GeneratedMSBuildEditorConfig.editorconfig
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.AssemblyInfoInputs.cache
 D:\_PROJEK\ProjectAPIDapper\projAPIDapper\projAPIDapper\obj\Debug\netcoreapp3.1\projAPIDapper.AssemblyInfo.cs
